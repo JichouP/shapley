@@ -8,6 +8,8 @@ name = "lib"
 path = "src/lib.rs"
 
 [dependencies]
+itertools = "0.12"
+thiserror = "1.0"
 
 [profile.release]
 debug = true
