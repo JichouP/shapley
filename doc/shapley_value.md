@@ -4,20 +4,27 @@ Wikipedia: [English](https://en.wikipedia.org/wiki/Shapley_value), [Japanese](ht
 
 ## 定義
 
+### 特性関数
+
+特性関数 $v$ を以下のような性質をもつ関数とする。
+ここで、$S, T \subseteq N$ かつ $S \cap T = \emptyset$ である。
+
+1. $v(\emptyset) = 0$
+2. $v(S \cup T) \geq v(S) + v(T)$
+
 ### シャープレイ値
 
 プレイヤーの集合を $N = \{1, 2, \ldots, n\}$ とし、提携 (coalition) $S \subseteq N$ に対して、特性関数 $v: 2^N \to \mathbb{R}$ が定義されているとする。このとき、プレイヤー $i \in N$ のシャープレイ値 $\phi_i(v)$ は以下のように定義される。
 
 $$
-\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(n-|S|-1)!}{n!} (v(S \cup \{i\}) - v(S))
+\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N|-|S|-1)!}{|N|!} (v(S \cup \{i\}) - v(S))
 $$
 
 式の意味は以下の通り。
 
 - $S \subseteq N \setminus \{i\}$: プレイヤー $i$ を含まない全ての提携
 - $|S|$: 提携 $S$ に含まれるプレイヤーの数
-- $n$: プレイヤーの総数
-- $\displaystyle\frac{|S|!(n-|S|-1)!}{n!}$: 重み付け係数。プレイヤーの全ての可能な順列における提携 $S$ の出現確率
+- $\displaystyle\frac{|S|!(|N|-|S|-1)!}{|N|!}$: 重み付け係数。プレイヤーの全ての可能な順列における提携 $S$ の出現確率
 - $v(S \cup \{i\}) - v(S)$: プレイヤー $i$ が提携 $S$ に参加することによる限界貢献 (marginal contribution)
 
 ### シャープレイベクトル
