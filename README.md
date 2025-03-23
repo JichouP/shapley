@@ -12,3 +12,8 @@
 1. ブランチに push すると、GitHub Actions がビルドを行う
 1. ビルドが成功したら、Dockerfile をビルドしてイメージを作成する
 1. イメージを GitHub Container Registry に push する
+
+## Warning
+
+- このアルゴリズムの計算量は O(n!) であるため、n が大きい場合は計算が非常に遅くなる
+- 計算量を減らすためには、枝刈りや並列化などの工夫が必要である
